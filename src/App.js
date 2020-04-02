@@ -1,13 +1,18 @@
 import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './Header';
+import Home from './Home';
+import Genres from './Genres';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Navbar>
-        <NavbarBrand>My Series</NavbarBrand>
-      </Navbar>
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Route path='/' exact component={Home} />
+        <Route path='/genres' component={Genres} />
+      </div>
+    </Router>
   );
 }
 
