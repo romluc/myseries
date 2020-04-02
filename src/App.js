@@ -1,9 +1,12 @@
 import React from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>My Series</h1>
+    <div>
+      <Navbar>
+        <NavbarBrand>My Series</NavbarBrand>
+      </Navbar>
     </div>
   );
 }
