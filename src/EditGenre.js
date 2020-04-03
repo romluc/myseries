@@ -2,17 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-const EditGenre = props => {
+const EditGenre = ({ match }) => {
   const [name, setName] = useState('');
   const [success, setSuccess] = useState('');
 
   useEffect(() => {
-    axios.get('/api/genres/1').then(res => {
+    axios.get(`/api/genres/${match.params.id}`).then(res => {
       setName(res.data.name);
     });
-  }, []);
-
-  console.log(props);
+  }, [match.params.id]);
 
   const onChange = evt => {
     setName(evt.target.value);
@@ -20,7 +18,7 @@ const EditGenre = props => {
 
   const save = () => {
     axios
-      .post('/api/genres', {
+      .put(`/api/genres/${match.params.id}`, {
         name
       })
       .then(res => {

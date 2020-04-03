@@ -30,7 +30,8 @@ const Genres = () => {
           >
             Remove
           </button>
-          <Link to={`/genres/${record.id}`} className={`ml-2`}>
+
+          <Link to={`/genres/${record.id}`} className='btn btn-warning ml-1'>
             Edit
           </Link>
         </td>
@@ -53,7 +54,9 @@ const Genres = () => {
     <div className='container'>
       <h1>Genres</h1>
       <div>
-        <Link to='/genres/new'>Add new</Link>
+        <Link to='/genres/new' className='btn btn-info mb-2'>
+          Add new
+        </Link>
       </div>
       <Table dark>
         <thead>
