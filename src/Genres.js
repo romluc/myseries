@@ -9,8 +9,32 @@ const Genres = () => {
       setData(res.data.data);
     });
   });
+
+  const renderLine = record => {
+    return (
+      <tr key={record.id}>
+        <th scope='row'>{record.id}</th>
+        <td>{record.name}</td>
+        <td>
+          <button>+</button>
+        </td>
+      </tr>
+    );
+  };
+
+  if (!data.length) {
+    return (
+      <div className='container'>
+        <h1>Genres</h1>
+        <div className='alert alert-warning' role='alert'>
+          No genres created yet!
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div>
+    <div className='container'>
       <h1>Genres</h1>
       <Table dark>
         <thead>
@@ -20,14 +44,8 @@ const Genres = () => {
             <th scope='col'>Ações</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope='row'>1</th>
-            <td>Mark</td>
-          </tr>
-        </tbody>
+        <tbody>{data.map(renderLine)}</tbody>
       </Table>
-      <pre>{JSON.stringify(data)}</pre>
     </div>
   );
 };

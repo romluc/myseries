@@ -3,6 +3,8 @@ import axios from 'axios';
 import Header from './Header';
 import Home from './Home';
 import Genres from './Genres';
+import NewGenre from './NewGenre';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
@@ -19,8 +21,8 @@ function App() {
       <div>
         <Header />
         <Route path='/' exact component={Home} />
-        <Route path='/genres' component={Genres} />
-        <pre>{JSON.stringify(data)}</pre>
+        <Route path='/genres' exact component={Genres} />
+        <Route path='/genres/new' exact component={NewGenre} />
       </div>
     </Router>
   );
