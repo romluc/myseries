@@ -6,7 +6,7 @@ import {
   Collapse,
   NavItem,
   NavLink,
-  NavbarToggler
+  NavbarToggler,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -19,19 +19,21 @@ const Header = () => {
 
   return (
     <Navbar color='dark' dark expand='md'>
-      <NavbarBrand tag={Link} to='/'>
-        My Series
-      </NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={open} navbar>
-        <Nav className='ml=auto' navbar>
-          <NavItem>
-            <NavLink tag={Link} to='/genres'>
-              Genres
-            </NavLink>
-          </NavItem>
-        </Nav>
-      </Collapse>
+      <div className='container'>
+        <NavbarBrand tag={Link} to='/'>
+          My Series
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={open} navbar>
+          <Nav className='ml-auto' navbar>
+            <NavItem>
+              <NavLink tag={Link} to='/genres'>
+                Genres
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </div>
     </Navbar>
   );
 };
