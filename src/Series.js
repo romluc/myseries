@@ -31,7 +31,7 @@ const Series = () => {
             Remove
           </button>
 
-          <Link to={`/serie/${record.id}`} className='btn btn-warning ml-1'>
+          <Link to={`/series/${record.id}`} className='btn btn-warning ml-1'>
             Edit
           </Link>
         </td>
