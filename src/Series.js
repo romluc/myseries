@@ -12,7 +12,7 @@ const Series = () => {
   });
 
   const deleteSerie = (id) => {
-    axios.delete(`/api/serie/${id}`).then((res) => {
+    axios.delete(`/api/series/${id}`).then((res) => {
       const filtered = data.filter((item) => id !== item.id);
       setData(filtered);
     });
@@ -43,6 +43,9 @@ const Series = () => {
     return (
       <div className='container'>
         <h1>Series</h1>
+        <Link to='/series/new' className='btn btn-info mb-2'>
+          Add new
+        </Link>
         <div className='alert alert-warning' role='alert'>
           No series created yet!
         </div>

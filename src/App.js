@@ -5,6 +5,7 @@ import Genres from './Genres';
 import NewGenre from './NewGenre';
 import EditGenre from './EditGenre';
 import Series from './Series';
+import NewSeries from './NewSeries';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/genres/new' exact component={NewGenre} />
           <Route path='/genres/:id' exact component={EditGenre} />
           <Route path='/series' exact component={Series} />
+          <Route path='/series/new' exact component={NewSeries} />
         </Switch>
       </div>
     </Router>

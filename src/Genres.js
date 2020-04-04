@@ -6,19 +6,19 @@ import { Table } from 'reactstrap';
 const Genres = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('/api/genres').then(res => {
+    axios.get('/api/genres').then((res) => {
       setData(res.data.data);
     });
   });
 
-  const deleteGenre = id => {
-    axios.delete(`/api/genres/${id}`).then(res => {
-      const filtered = data.filter(item => id !== item.id);
+  const deleteGenre = (id) => {
+    axios.delete(`/api/genres/${id}`).then((res) => {
+      const filtered = data.filter((item) => id !== item.id);
       setData(filtered);
     });
   };
 
-  const renderLine = record => {
+  const renderLine = (record) => {
     return (
       <tr key={record.id}>
         <th scope='row'>{record.id}</th>
@@ -43,6 +43,9 @@ const Genres = () => {
     return (
       <div className='container'>
         <h1>Genres</h1>
+        <Link to='/genres/new' className='btn btn-info mb-2'>
+          Add new
+        </Link>
         <div className='alert alert-warning' role='alert'>
           No genres created yet!
         </div>
